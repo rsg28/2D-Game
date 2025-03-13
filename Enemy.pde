@@ -42,7 +42,8 @@ class Enemy {
   }
   
   void shoot() {
-    bullets.add(new Bullet(x, y + size/2, true));
+    // Create a new aimed bullet
+    bullets.add(new AimedBullet(x, y + size/2, true, player.x, player.y));
   }
   
   boolean hits(Player player) {

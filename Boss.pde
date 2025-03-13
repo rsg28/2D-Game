@@ -55,10 +55,10 @@ class Boss {
   }
   
   void shoot() {
-    // Boss shoots 3 bullets at once
-    bullets.add(new Bullet(x, y + size/2, true));
-    bullets.add(new Bullet(x - 20, y + size/2, true));
-    bullets.add(new Bullet(x + 20, y + size/2, true));
+    // Boss shoots 3 aimed bullets at once
+    bullets.add(new AimedBullet(x, y + size/2, true, player.x, player.y));
+    bullets.add(new AimedBullet(x - 20, y + size/2, true, player.x, player.y));
+    bullets.add(new AimedBullet(x + 20, y + size/2, true, player.x, player.y));
   }
   
   boolean hits(Player player) {
